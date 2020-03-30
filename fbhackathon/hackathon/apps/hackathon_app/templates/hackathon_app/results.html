@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COVIDAID</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        #minus-sign {
+            display: none;
+        }
+
+        #terms {
+            display: none;
+        }
+
+        #documentation {
+            display: none;
+        }
+
+        #apply {
+            display: none;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $('#plus-btn').click(function () {
+                $('#plus-sign').hide();
+                $('#minus-sign').show();
+            });
+
+            $('#minus-btn').click(function () {
+                $('#minus-sign').hide();
+                $('#plus-sign').show();
+            });
+
+            $('#requirements-tab').click(function () {
+                console.log('requirement')
+
+                $('#requirements-tab').css({
+                    "color": "rgb(33, 150, 243)",
+                })
+                $('#terms-tab').css({
+                    "color": "black",
+                })
+                $('#documentation-tab').css({
+                    "color": "black",
+                })
+                $('#apply-tab').css({
+                    "color": "black",
+                })
+
+                $('#terms').hide();
+                $('#documentation').hide();
+                $('#apply').hide();
+                $('#requirements').show();
+            });
+
+            $('#terms-tab').click(function () {
+                console.log('terms')
+
+                $('#requirements-tab').css({
+                    "color": "black",
+                })
+                $('#terms-tab').css({
+                    "color": "rgb(33, 150, 243)",
+                })
+                $('#documentation-tab').css({
+                    "color": "black",
+                })
+                $('#apply-tab').css({
+                    "color": "black",
+                })
+
+                $('#requirements').hide();
+                $('#documentation').hide();
+                $('#apply').hide();
+                $('#terms').show();
+            });
+
+            $('#documentation-tab').click(function () {
+                console.log('documentation')
+
+                $('#requirements-tab').css({
+                    "color": "black",
+                })
+                $('#terms-tab').css({
+                    "color": "black",
+                })
+                $('#documentation-tab').css({
+                    "color": "rgb(33, 150, 243)",
+                })
+                $('#apply-tab').css({
+                    "color": "black",
+                })
+
+                $('#requirements').hide();
+                $('#terms').hide();
+                $('#apply').hide();
+                $('#documentation').show();
+            });
+
+            $('#apply-tab').click(function () {
+                console.log('apply')
+
+                $('#requirements-tab').css({
+                    "color": "black",
+                })
+                $('#terms-tab').css({
+                    "color": "black",
+                })
+                $('#documentation-tab').css({
+                    "color": "black",
+                })
+                $('#apply-tab').css({
+                    "color": "rgb(33, 150, 243)",
+                })
+
+                $('#requirements').hide();
+                $('#terms').hide();
+                $('#documentation').hide();
+                $('#apply').show();
+            });
+        });
+    </script>
+
+    <style>
+        #requirements-tab {
+            color: rgb(33, 150, 243);
+        }
+
+        .header {
+            color: rgb(33, 150, 243);
+            font-size: 2.5rem;
+            font-family: Century Gothic, CenturyGothic, Geneva, AppleGothic, sans-serif;
+            margin-left: 80px;
+        }
+
+        .column-0 {
+            font-family: Century Gothic, CenturyGothic, Geneva, AppleGothic, sans-serif;
+            margin-left: 95px;
+            margin-bottom: 50px;
+        }
+
+        .column-1 {
+            margin-left: 80px;
+            font-size: 1.5rem;
+            font-family: Century Gothic, CenturyGothic, Geneva, AppleGothic, sans-serif;
+        }
+
+        h4 {
+            margin-left: 87px;
+            font-family: Century Gothic, CenturyGothic, Geneva, AppleGothic, sans-serif;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 85%;
+            margin: 0px auto;
+        }
+
+        .table_input {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 85%;
+            margin: 0px auto;
+        }
+
+        .td-3 {
+            border-top: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        .td-2 {
+            border-bottom: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        .plus {
+            width: 40px;
+            height: 40px;
+        }
+
+        .td-1 {
+            width: 70px;
+        }
+
+        p {
+            font-family: Century Gothic, CenturyGothic, Geneva, AppleGothic, sans-serif;
+        }
+
+        .title {
+            color: rgb(0, 45, 155);
+        }
+
+        .description {
+            color: rgb(76, 78, 75);
+            font-style: italic;
+        }
+
+        #li-1 {
+            padding-top: 25px;
+        }
+
+        ul li {
+            margin-bottom: 25px;
+            align-content: left;
+        }
+
+        ul {
+            padding-left: 17px;
+            color: rgb(104, 104, 104);
+        }
+
+        .inline-d-block {
+            display: inline;
+        }
+
+        .pr-20 {
+            padding-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="header" style="margin-left: 90px;">Take a look at what we found</h1>
+
+    <table class="table_input">
+        <tr>
+            <td class="td-3"><strong>Entity: </strong> Business</td>
+            <td class="td-3"><strong>City: </strong> Los Angeles</td>
+            <td class="td-3"><strong>State: </strong> CA</td>
+            <td class="td-3"><strong>Industry: </strong> Entertainment</td>
+            <td class="td-3"><strong>Support Type: </strong> Finances</td>
+        </tr>
+    </table>
+
+    <h4 style="margin-left: 110px;">Showing 1-20 of 200 results</h4>
+    <table id="plus-sign">
+        <tr>
+            <td class="td-1">
+                <img id="plus-btn" class="plus" src="/static/plus.png" alt="plus">
+            </td>
+            <td class="td-2">
+                <p class="title">Small Business Lending Facility
+                </p>
+                <p><strong>U.S. Small Business Administration
+                    </strong></p>
+                <p class="description">
+                    U.S. small business loan with generous interest rates introduced by the CARES Act bill. Turns into grant for companies that maintain payroll, among other things.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td class="td-1">
+                <img class="plus" src="/static/plus.png" alt="plus">
+            </td>
+            <td class="td-2">
+                <p class="title">Automatic deferment of previous SBA loans</p>
+                <p><strong>U.S. Small Business Administration</strong></p>
+                <p class="description">Borrowers of home and business disaster loans do not have to contact SBA to
+                    request deferment - these will be automatic.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="td-1">
+                <img class="plus" src="/static/plus.png" alt="plus">
+            </td>
+            <td class="td-2">
+                <p class="title">Small Business Emergency Microloan Program</p>
+                <p><strong>City of Los Angeles</strong></p>
+                <p class="description">The Small Business Emergency Microloan Program will provide loans of $5,000 to
+                    $20,000 for small business enterprises that have been affected by the COVID-19 outbreak.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="td-1">
+                <img id="plus-btn" class="plus" src="/static/plus.png" alt="plus">
+            </td>
+            <td class="td-2">
+                <p class="title">SBA Disaster Assistance</p>
+                <p><strong>U.S. Small Business Administration</strong></p>
+                <p class="description">SBA's Economic Injury Disaster Loans (EIDL) offer up to $2 million in assistance and can provide vital economic support to small businesses to help overcome the temporary loss of revenue they are experiencing. </p>
+            </td>
+        </tr>
+
+        <table id="minus-sign">
+            <tr>
+                <td class="td-1">
+                    <img id="minus-btn" class="plus" src="/static/minus.jpg" alt="plus"
+                        style="position: absolute; top: 259px;">
+                </td>
+                <td class="td-2">
+                    <p class="title">Small Business Lending Facility</p>
+                    <p><strong>U.S. Small Business Administration</strong></p>
+                    <p class="description">U.S. small business loan with generous interest rates introduced by the CARES
+                        Act bill Turns into grant for companies that maintain payroll, among other things. </p>
+                    <div>
+                        <p style="padding-top:30px">
+                            <div id="requirements-tab" class="inline-d-block pr-20">Requirements</div>
+                            <div id="terms-tab" class="inline-d-block pr-20">Terms</div>
+                            <div id="documentation-tab" class="inline-d-block pr-20">Documentation</div>
+                            <div id="apply-tab" class="inline-d-block pr-20">How to Apply</div>
+                        </p>
+                    </div>
+                    <div id="requirements">
+                        <ul>
+                            <li id="li-1">Have fewer than 500 employees</li>
+                            <li>US business started prior to February 15 - Pay employee salaries</li>
+                            <li>Pay payroll tax and/or independent contractors</li>
+                            <li>Cannot have used Refundable Employee Retention Credit (Section 2301)</li>
+
+                        </ul>
+                    </div>
+
+                    <div id="terms">
+                        <ul>
+                            <li id="li-1"><strong>Forgiveness:</strong> Portion of loans used to pay employees, rent,
+                                interest payments on secured debt obligations (like a mortgage) incurred prior to
+                                February 15, and utilities over an eight-week period from date of loan will be forgiven.
+                            </li>
+                            <li><strong>Loan Term:</strong> Maximum of 10 years.</li>
+                            <li><strong>Interest Rate:</strong> Shall not exceed 4%.</li>
+                            <li><strong>Prepayment Penalties:</strong> None.</li>
+                            <li><strong>Secured:</strong> Loans are unsecured and will not prime existing debt
+                                instruments in terms of payment priority. Will also not require personal guarantees from
+                                owners of borrowers.</li>
+                            <li><strong>Use of Proceeds:</strong> Loan proceeds can be used for payroll, rent, mortgage
+                                payments, utilities, and sick leave. Can also be used to make interest payments on debt
+                                obligations incurred prior to Feb 15. **Cannot** be used to make (pre-)payment of
+                                principal of existing debt obligations.</li>
+                            <li><strong>Maximum Loan Amount: Lesser of...</strong> - $10,000,000
+                                - 250% of monthly payroll</li>
+                            <li><strong>Deferment of Interest Payments:</strong> Principal, interest and fees can be
+                                deferred for between 6 months and 1 year.</li>
+                            <li><strong>Reimbursement for Underwriting/Origination Fees:</strong> SBA will reimburse
+                                lenders for amount of
+                                - 5% for loans less than $350,000 - 3% for loans> $350,000 and less than $2,000,000 - 1%
+                                for loans ≥
+                                $2,000,000</li>
+                        </ul>
+                    </div>
+
+                    <div id="documentation">
+                        <ul>
+                            <li id="li-1">A detailed cap table showing holdings of stock for each individual and entity
+                                that owns more than 1% of the company. If you have something with even more granular
+                                detail, the better.
+                            </li>
+                            <li>A list of the identities and affiliations of every director on your board.</li>
+                            <li>Prepare to complete [SBA Form 1919]204-28-14_review.pdf) and [SBA Form 1920]</li>
+                            <li>Personal Background and Financial Statement
+                            </li>
+                            <li>Business Financial Statements, including:
+                                - Profit & Loss Statement
+                                - Projected Financial Statements
+                                - Ownership and Affiliations
+                                - Business Certificate/License
+                                - Loan Application History
+                                - Income Tax Returns
+                                - Resumes
+                                - Business Overview and History
+                                - Business Lease
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="apply">
+                        <ul>
+                            <li id="li-1">'The loans will be administered through SBA's section 7(a) program, and
+                                therefore made and served by existing banks and lenders enrolled in the SBA 7(a)
+                                program, and a few other lenders as determined by the SBA.
+                            </li>
+                            <li>Find a lender through Lender Match. Specifically, you should target lenders that can
+                                issue 7(a) loans. Approximately 1,800 private lenders are already approved to issue
+                                them.</li>
+                        </ul>
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+    </table>
+
+</body>
+
+</html>

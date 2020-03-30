@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <script data-require="angular.js@1.1.x" src="http://code.angularjs.org/1.1.5/angular.min.js"
+        data-semver="1.1.5"></script>
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/multiselect.js"></script>
+    <link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet"
+        href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+
+
+    <title>Document</title>
+
+    <style>
+        .header {
+            color: rgb(33, 150, 243);
+            font-size: 3.5rem;
+            font-family: Century Gothic, CenturyGothic, Geneva, AppleGothic, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .row-1 span {
+            font-size: 40px;
+        }
+
+        .row-2 span {
+            font-size: 40px;
+        }
+
+        .row-3 span {
+            font-size: 40px;
+        }
+
+        .row-4 span {
+            font-size: 40px;
+        }
+
+        .col-11 {
+            border-bottom: 2px rgb(187, 187, 187) solid;
+        }
+
+        .row-1 {
+            width: 100%;
+        }
+
+        .row-2 span {
+            font-size: 40px;
+        }
+
+        input {
+            border: none;
+        }
+
+        .col-5 {
+            border-bottom: 2px rgb(187, 187, 187) solid;
+        }
+
+        h1 {
+            padding-left: 100px;
+            margin-bottom: 50px;
+        }
+
+        button {
+            background-color: rgb(33, 150, 243);
+            color: white;
+            width: 160px;
+            height: 50px;
+            font-family: Century Gothic, CenturyGothic, Geneva, AppleGothic, sans-serif;
+        }
+
+        #img1 {
+            height: 30px;
+            width: 30px;
+        }
+
+        #img2 {
+            height: 45px;
+            width: 45px;
+        }
+
+        #img3 {
+            height: 45px;
+            width: 45px;
+        }
+
+        #img4 {
+            height: 40px;
+            width: 40px;
+        }
+
+        #img5 {
+            height: 40px;
+            width: 40px;
+            margin-top: 45px;
+        }
+
+        .bootstrap-select .bs-ok-default::after {
+            width: 0.3em;
+            height: 0.6em;
+            border-width: 0 0.1em 0.1em 0;
+            transform: rotate(45deg) translateY(0.5rem);
+        }
+
+        .btn.dropdown-toggle:focus {
+            outline: none !important;
+        }
+
+        #dropdown {
+            color: #fff;
+            width: 50%;
+            background-color: #374954;
+            margin: 0 auto;
+            padding: 0px;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $('.selectpicker').selectpicker();
+        });
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1 class="header" style="padding-left:73px;">Hello.</h1>
+
+    <form action="/result_process" method="POST">
+        {% csrf_token %}
+
+        <div class="container">
+            <div class="row row-1 mb-5">
+                <div class="col-1">
+                    <img id="img1" src="/static/luggage.png" alt="luggage">
+                </div>
+                <div class="col-11 mt-4">
+                    <select name="support-type" id="support-type"
+                        style="height: 30px; width: 440px; ;position: absolute; bottom: 8px;">
+                        <option value="supopert">Are you seeking small business or individual support?</option>
+                        <option value="individual">Individual</option>
+                        <option value="business">Business</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row row-2 pt-4 mb-5">
+                <div class="col-1">
+                    <img id="img2" src="/static/building.png" alt="luggage">
+                </div>
+                <div class="col-5 mt-4">
+                    <input type="text" placeholder="What city do you work in?" style="border: none;">
+                </div>
+                <div>
+                    <img id="img3" src="/static/location.jpg" alt="luggage">
+                </div>
+                <div class="col-5 mt-4 ml-4">
+                    <input type="text" placeholder="What State?" style="border: none;">
+                </div>
+            </div>
+
+            <div class="row row-3 mb-2 pt-5">
+                <div class="col-1">
+                    <img id="img4" src="/static/industry.jpg" alt="luggage">
+                </div>
+                <div class="col-11 mt-4">
+                    <select name="industry-type" id="industry-type"
+                        style="width: 440px; height: 30px; position: absolute; bottom: 8px;">
+                        <option value="industry">What industry are you in?</option>
+                        <option value="accounting">Accounting</option>
+                        <option value="cosmetology">Cosmetology</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="hospitality">Hospitality</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row row-4 mb-5">
+                <div class="col-1">
+                    <img id="img5" src="/static/help.jpg" alt="luggage">
+                </div>
+                <div class="col-11 mt-4">
+                    <select name="help-type" id="help-type" style="width: 400px; height: 90px;border: none;" multiple = "">
+                        <option value="supopert">How can we help you?</option>
+                        <option value="legal">Legal</option>
+                        <option value="fincance">Finance</option>
+                        <option value="accounting">Accounting</option>
+                        <option value="taxes">Taxes</option>
+                        <option value="rent">Rent</option>
+                        <option value="supply">Supply</option>
+                        <option value="anxiety">Anxiety</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row row-5 mb-5">
+                <div class="col">
+                    <button type="submit"><strong>SUBMIT &ensp; &#8250;</strong></button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+
+</body>
+
+</html>
